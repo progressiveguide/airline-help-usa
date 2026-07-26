@@ -101,6 +101,35 @@
     .note{font-size:.92rem;color:var(--muted)}
     .footer{border-top:1px solid var(--line);margin-top:30px;padding-top:16px}
 
+    .trust{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:10px 0 4px;
+    }
+    .badge{
+      border:1px solid var(--line);
+      background:#fff;
+      color:#334155;
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.8rem;
+    }
+
+    .legal-nav{
+      margin:14px 0 6px;
+      padding:0;
+      list-style:none;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .legal-nav a{
+      text-decoration:none;
+      font-weight:650;
+    }
+    .legal-nav a:hover{text-decoration:underline}
+
     @media (max-width:800px){.container{padding:16px}}
   </style>
 </head>
@@ -111,24 +140,31 @@
       <h1>Airline Booking & Cancellation Help (2026)</h1>
       <p class="lead">Find clear, action-first guidance for booking, changing, canceling, refund requests, and travel credit use across major U.S. airlines. Start with your carrier page below.</p>
 
-      <section class="quick" aria-label="Quick support">
+      <section class="quick" aria-label="Quick support options">
         <article class="qcard">
-          <div class="qtitle">Book or Rebook Help</div>
+          <h2 class="qtitle">Book or Rebook Help</h2>
           <a href="tel:+18569007834" aria-label="Call for booking help">1(856)900-7834</a>
         </article>
         <article class="qcard">
-          <div class="qtitle">Cancellation & Refund Guidance</div>
+          <h2 class="qtitle">Cancellation & Refund Guidance</h2>
           <a href="tel:+18569007834" aria-label="Call for cancellation help">1(856)900-7834</a>
         </article>
         <article class="qcard">
-          <div class="qtitle">Urgent Same-Day Changes</div>
+          <h2 class="qtitle">Urgent Same-Day Changes</h2>
           <a href="tel:+18569007834" aria-label="Call for urgent travel help">1(856)900-7834</a>
         </article>
       </section>
+
+      <div class="trust" aria-label="Trust signals">
+        <span class="badge">Non-spammy editorial tone</span>
+        <span class="badge">Policy-aware traveler guidance</span>
+        <span class="badge">Accessibility-first structure</span>
+        <span class="badge">Updated for 2026</span>
+      </div>
     </div>
   </header>
 
-  <main class="container">
+  <main class="container" id="main-content">
     <nav class="toc" aria-label="Hub navigation">
       <h2>Airline help pages</h2>
       <ul>
@@ -191,6 +227,15 @@
       <h2>Editorial Standard</h2>
       <p>We publish practical, policy-aware, traveler-first guidance designed for real-time decisions under pressure.</p>
       <p class="note">Publisher: Airline Consumer Guide • Last updated: July 26, 2026</p>
+
+      <nav aria-label="Trust and policy pages">
+        <ul class="legal-nav">
+          <li><a href="/airline-help-usa/about-us/">About Us</a></li>
+          <li><a href="/airline-help-usa/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/airline-help-usa/editorial-review/">Editorial Review</a></li>
+          <li><a href="/airline-help-usa/contact/">Contact</a></li>
+        </ul>
+      </nav>
     </section>
   </main>
 
