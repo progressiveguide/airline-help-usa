@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://progressiveguide.github.io/airline-help-usa/sitemap.xml
