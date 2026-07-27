@@ -3,248 +3,641 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Airline Booking & Cancellation Help (2026) | Airline Consumer Guide</title>
-  <meta name="description" content="Get practical airline booking and cancellation help for major U.S. carriers. Compare change, refund, and credit options with action-first traveler guidance." />
+  <title>Airline Booking, Cancellation & Refund Help (2026) | Airline Consumer Guide</title>
+  <meta name="description" content="Get practical, human-first airline help for booking changes, cancellations, refunds, and travel credits across American, Delta, United, Southwest, and JetBlue. Real answers for real travel problems." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <link rel="canonical" href="https://progressiveguide.github.io/airline-help-usa/" />
-  <meta name="theme-color" content="#ffffff" />
+  <meta name="theme-color" content="#0b57d0" />
+  <meta name="author" content="Airline Consumer Guide" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Airline Booking & Cancellation Help (2026)" />
-  <meta property="og:description" content="Action-first airline change, cancellation, refund, and travel credit guidance." />
+  <meta property="og:title" content="Airline Booking, Cancellation & Refund Help (2026)" />
+  <meta property="og:description" content="Action-first airline change, cancellation, refund, and travel credit guidance — updated for 2026." />
   <meta property="og:url" content="https://progressiveguide.github.io/airline-help-usa/" />
+  <meta property="og:site_name" content="Airline Consumer Guide" />
 
   <style>
+    /* ── Design tokens ──────────────────────────────────── */
     :root{
       --bg:#ffffff;
       --surface:#f7f9fc;
+      --surface-2:#eef3fb;
       --line:#dbe3ee;
       --text:#111827;
       --muted:#4b5563;
       --brand:#0b57d0;
       --brand-2:#2b7bff;
-      --shadow:0 8px 28px rgba(13,33,68,.08);
+      --brand-dark:#083fa8;
+      --success:#16a34a;
+      --shadow:0 6px 24px rgba(13,33,68,.08);
+      --shadow-sm:0 2px 8px rgba(13,33,68,.06);
       --radius:14px;
-      --radius-sm:10px;
+      --radius-sm:9px;
       --max:1080px;
+      --nav-h:58px;
     }
-    *{box-sizing:border-box}
+    /* ── Reset ──────────────────────────────────────────── */
+    *,::before,::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px)}
     body{
-      margin:0;
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
       line-height:1.65;
       color:var(--text);
-      background:linear-gradient(180deg,#f8fbff 0%,#fff 30%,#fff 100%);
+      background:#fff;
       -webkit-font-smoothing:antialiased;
       text-rendering:optimizeLegibility;
     }
-    .container{max-width:var(--max);margin:0 auto;padding:20px}
-    .hero{
+    img,svg{display:block}
+    a{color:var(--brand)}
+    /* ── Layout ─────────────────────────────────────────── */
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    section{padding:52px 0}
+    section+section{border-top:1px solid var(--line)}
+    /* ── Sticky nav ─────────────────────────────────────── */
+    .site-nav{
+      position:sticky;top:0;z-index:100;
+      height:var(--nav-h);
+      background:rgba(255,255,255,.97);
       border-bottom:1px solid var(--line);
-      background:
-        radial-gradient(900px 360px at 0% -20%, rgba(43,123,255,.11), transparent 58%),
-        radial-gradient(700px 240px at 100% -10%, rgba(11,87,208,.09), transparent 60%),
-        #fff;
+      backdrop-filter:saturate(1.8) blur(12px);
+      -webkit-backdrop-filter:saturate(1.8) blur(12px);
     }
-    .eyebrow{font-size:.83rem;color:var(--muted);margin-bottom:8px;letter-spacing:.02em}
-    h1{font-size:clamp(1.8rem,3.3vw,2.5rem);line-height:1.2;margin:8px 0 12px;max-width:22ch}
-    h2{font-size:clamp(1.22rem,2.2vw,1.58rem);margin:34px 0 12px}
-    h3{font-size:1.05rem;margin:14px 0 8px}
-    p{margin:0 0 14px;color:#1f2937}
-    .lead{font-size:1.06rem;color:#253244;max-width:76ch}
-
-    .quick{
-      display:grid;gap:10px;margin:18px 0 8px;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    .nav-inner{
+      max-width:var(--max);margin:0 auto;padding:0 20px;
+      height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;
+    }
+    .nav-brand{
+      font-weight:800;font-size:1.05rem;color:var(--brand);text-decoration:none;white-space:nowrap;
+      letter-spacing:-.01em;
+    }
+    .nav-brand span{color:var(--text)}
+    .nav-links{
+      display:flex;gap:0;list-style:none;align-items:center;flex-wrap:wrap;
+    }
+    .nav-links a{
+      display:block;padding:8px 11px;font-size:.84rem;font-weight:600;
+      color:var(--muted);text-decoration:none;border-radius:7px;white-space:nowrap;
+    }
+    .nav-links a:hover,.nav-links a:focus-visible{color:var(--brand);background:var(--surface)}
+    .nav-links a:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+    .nav-cta{
+      flex-shrink:0;
+      padding:8px 16px;border-radius:999px;
+      background:var(--brand);color:#fff;font-weight:700;font-size:.84rem;
+      text-decoration:none;border:none;cursor:pointer;
+    }
+    .nav-cta:hover,.nav-cta:focus-visible{background:var(--brand-dark)}
+    .nav-cta:focus-visible{outline:2px solid var(--brand);outline-offset:3px}
+    /* ── Hero ───────────────────────────────────────────── */
+    .hero{
+      padding:60px 0 52px;
+      background:
+        radial-gradient(900px 400px at 0% -30%, rgba(43,123,255,.12), transparent 60%),
+        radial-gradient(700px 280px at 100% -15%, rgba(11,87,208,.09), transparent 60%),
+        linear-gradient(180deg,#f4f8ff 0%,#fff 55%);
+      border-bottom:1px solid var(--line);
+    }
+    .hero-inner{display:grid;gap:32px;align-items:center}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:6px;
+      font-size:.8rem;font-weight:600;color:var(--brand);
+      background:rgba(11,87,208,.07);border:1px solid rgba(11,87,208,.14);
+      padding:4px 12px;border-radius:999px;letter-spacing:.02em;margin-bottom:14px;
+    }
+    h1{
+      font-size:clamp(1.9rem,4vw,2.7rem);line-height:1.15;
+      font-weight:800;letter-spacing:-.02em;color:#0d1f42;
+      margin-bottom:16px;max-width:22ch;
+    }
+    .lead{
+      font-size:1.07rem;color:#253244;max-width:64ch;line-height:1.7;margin-bottom:22px;
+    }
+    /* ── Quick action cards ─────────────────────────────── */
+    .quick-grid{
+      display:grid;gap:10px;margin-top:8px;
+      grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
     }
     .qcard{
       border:1px solid var(--line);border-radius:var(--radius);
-      background:#fff;padding:14px;box-shadow:var(--shadow);
+      background:#fff;padding:16px;box-shadow:var(--shadow-sm);
     }
-    .qtitle{font-weight:700;font-size:.95rem;color:#334155}
-    .qcard a{display:inline-block;margin-top:8px;font-weight:750;text-decoration:none;color:#0f172a}
-    .qcard a:hover{text-decoration:underline}
-
-    .grid{
-      display:grid;gap:12px;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      margin:16px 0 8px;
+    .qcard-label{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:6px}
+    .qcard-action{font-size:1.05rem;font-weight:800;color:var(--brand);text-decoration:none}
+    .qcard-action:hover{text-decoration:underline}
+    /* ── Trust badges ───────────────────────────────────── */
+    .trust-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+    .badge{
+      display:inline-flex;align-items:center;gap:5px;
+      border:1px solid var(--line);background:#fff;color:#334155;
+      padding:5px 11px;border-radius:999px;font-size:.78rem;font-weight:600;
+    }
+    /* ── Section headings ───────────────────────────────── */
+    h2{
+      font-size:clamp(1.25rem,2.4vw,1.65rem);line-height:1.25;
+      font-weight:800;letter-spacing:-.015em;color:#0d1f42;margin-bottom:14px;
+    }
+    h3{font-size:1.05rem;font-weight:700;color:#0d1f42;margin-bottom:8px}
+    p{color:#1f2937;margin-bottom:14px}
+    p:last-child{margin-bottom:0}
+    ul,ol{padding-left:20px;color:#1f2937}
+    li{margin-bottom:6px}
+    .section-lead{font-size:1.04rem;color:var(--muted);max-width:68ch;margin-bottom:28px}
+    /* ── Airline cards grid ─────────────────────────────── */
+    .cards-grid{
+      display:grid;gap:14px;
+      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+      margin-top:18px;
     }
     .card{
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      background:#fff;
-      padding:14px;
-      box-shadow:var(--shadow);
+      border:1px solid var(--line);border-radius:var(--radius);
+      background:#fff;padding:18px;box-shadow:var(--shadow-sm);
+      display:flex;flex-direction:column;
     }
-    .card h3{margin-top:0}
-    .card p{margin-bottom:10px}
+    .card h3{margin-top:0;margin-bottom:8px}
+    .card p{flex:1;font-size:.95rem;color:var(--muted);margin-bottom:14px}
     .btn{
+      display:inline-flex;align-items:center;gap:6px;
+      border:1px solid #bfd6ff;background:linear-gradient(180deg,#fff,#f3f8ff);
+      padding:9px 14px;border-radius:999px;
+      text-decoration:none;color:#0f172a;font-weight:700;font-size:.9rem;
+      align-self:flex-start;
+    }
+    .btn:hover,.btn:focus-visible{border-color:#9cc0ff;color:var(--brand)}
+    .btn:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+    /* ── Problem/solution ───────────────────────────────── */
+    .problems-grid{
+      display:grid;gap:18px;margin-top:20px;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    }
+    .problem-card{
+      border-left:3px solid var(--brand);
+      background:var(--surface);border-radius:var(--radius-sm);
+      padding:18px 20px;
+    }
+    .problem-card .problem-tag{
+      font-size:.76rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;
+      color:var(--brand);margin-bottom:6px;display:block;
+    }
+    .problem-card h3{font-size:1rem;margin-bottom:8px}
+    .problem-card p{font-size:.95rem;margin-bottom:0}
+    /* ── FAQ accordion ──────────────────────────────────── */
+    .faq-list{margin-top:18px;display:flex;flex-direction:column;gap:2px}
+    details{
+      border:1px solid var(--line);border-radius:var(--radius-sm);
+      background:#fff;overflow:hidden;
+    }
+    summary{
+      padding:15px 18px;font-weight:700;font-size:.97rem;color:#0d1f42;
+      cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;
+      gap:12px;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary::after{
+      content:"＋";font-size:1.1rem;color:var(--brand);flex-shrink:0;transition:transform .2s;
+    }
+    details[open] summary::after{content:"−"}
+    details[open]{border-color:var(--brand)}
+    .faq-body{padding:0 18px 16px;color:#1f2937;font-size:.95rem;line-height:1.7}
+    summary:focus-visible{outline:2px solid var(--brand);outline-offset:-2px}
+    /* ── About, Editorial, Privacy ─────────────────────── */
+    .prose{max-width:76ch}
+    .prose h3{margin-top:24px;margin-bottom:8px}
+    .prose ul{margin:10px 0 14px;padding-left:22px}
+    .prose p+p{margin-top:0}
+    .info-box{
+      background:var(--surface-2);border:1px solid var(--line);
+      border-radius:var(--radius);padding:20px 24px;margin:18px 0;
+    }
+    .info-box p{margin-bottom:0}
+    /* ── Contact CTA ────────────────────────────────────── */
+    .cta-band{
+      background:linear-gradient(135deg,var(--brand) 0%,var(--brand-2) 100%);
+      border-radius:var(--radius);padding:40px 32px;
+      display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;
+    }
+    .cta-band h2{color:#fff;margin-bottom:6px}
+    .cta-band p{color:rgba(255,255,255,.88);margin-bottom:0;max-width:56ch}
+    .cta-btn-white{
       display:inline-flex;align-items:center;gap:8px;
-      border:1px solid #bfd6ff;
-      background:linear-gradient(180deg,#fff,#f3f8ff);
-      padding:8px 12px;border-radius:999px;
-      text-decoration:none;color:#0f172a;font-weight:700;font-size:.92rem;
+      background:#fff;color:var(--brand);font-weight:800;font-size:.95rem;
+      padding:13px 24px;border-radius:999px;text-decoration:none;flex-shrink:0;
+      border:2px solid transparent;
     }
-    .btn:hover{border-color:#9cc0ff;color:#0b57d0}
-
-    .toc{
-      background:linear-gradient(180deg,#fff,#fbfdff);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:14px;margin:20px 0;
+    .cta-btn-white:hover,.cta-btn-white:focus-visible{background:#e8f0fe}
+    .cta-btn-white:focus-visible{outline:2px solid #fff;outline-offset:3px}
+    /* ── Topics list ────────────────────────────────────── */
+    .topics-cols{
+      columns:2;column-gap:32px;margin-top:18px;
     }
-    .toc h2{font-size:1rem;margin:0 0 8px}
-    .toc ul{margin:0;padding-left:18px}
-    .toc li{margin:4px 0}
-
-    .note{font-size:.92rem;color:var(--muted)}
-    .footer{border-top:1px solid var(--line);margin-top:30px;padding-top:16px}
-
-    .trust{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin:10px 0 4px;
+    .topics-cols li{break-inside:avoid;margin-bottom:8px}
+    /* ── Footer ─────────────────────────────────────────── */
+    .site-footer{
+      border-top:1px solid var(--line);padding:40px 0 32px;
+      background:var(--surface);
     }
-    .badge{
-      border:1px solid var(--line);
-      background:#fff;
-      color:#334155;
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:.8rem;
+    .footer-grid{
+      display:grid;gap:32px;
+      grid-template-columns:2fr 1fr 1fr;
     }
-
-    .legal-nav{
-      margin:14px 0 6px;
-      padding:0;
-      list-style:none;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
+    .footer-brand{font-size:1rem;font-weight:800;color:var(--brand);margin-bottom:8px}
+    .footer-about{font-size:.88rem;color:var(--muted);line-height:1.6;max-width:32ch}
+    .footer-col h4{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:12px}
+    .footer-links{list-style:none}
+    .footer-links li{margin-bottom:8px}
+    .footer-links a{font-size:.88rem;color:#374151;text-decoration:none;font-weight:500}
+    .footer-links a:hover,.footer-links a:focus-visible{color:var(--brand);text-decoration:underline}
+    .footer-links a:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:3px}
+    .footer-bottom{
+      border-top:1px solid var(--line);margin-top:28px;padding-top:18px;
+      display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;
     }
-    .legal-nav a{
-      text-decoration:none;
-      font-weight:650;
+    .footer-bottom p{font-size:.8rem;color:var(--muted);margin-bottom:0}
+    .footer-bottom a{color:var(--muted);text-decoration:underline}
+    /* ── Note / small helper ────────────────────────────── */
+    .note{font-size:.88rem;color:var(--muted)}
+    .disclaimer{
+      font-size:.82rem;color:var(--muted);
+      border:1px solid var(--line);border-radius:var(--radius-sm);
+      padding:12px 16px;background:var(--surface);margin-top:18px;line-height:1.6;
     }
-    .legal-nav a:hover{text-decoration:underline}
-
-    @media (max-width:800px){.container{padding:16px}}
+    /* ── Responsive ─────────────────────────────────────── */
+    @media(max-width:840px){
+      .nav-links{display:none}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .topics-cols{columns:1}
+      .cta-band{padding:28px 20px}
+    }
+    @media(max-width:560px){
+      .wrap{padding:0 16px}
+      section{padding:36px 0}
+      .footer-grid{grid-template-columns:1fr}
+      h1{font-size:1.8rem}
+    }
+    /* ── Skip link ──────────────────────────────────────── */
+    .skip-link{
+      position:absolute;top:-999px;left:6px;z-index:999;
+      padding:10px 16px;background:var(--brand);color:#fff;font-weight:700;
+      border-radius:0 0 8px 8px;text-decoration:none;
+    }
+    .skip-link:focus{top:0}
   </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <div class="eyebrow">Airline Consumer Guide • Updated July 26, 2026</div>
-      <h1>Airline Booking & Cancellation Help (2026)</h1>
-      <p class="lead">Find clear, action-first guidance for booking, changing, canceling, refund requests, and travel credit use across major U.S. airlines. Start with your carrier page below.</p>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-      <section class="quick" aria-label="Quick support options">
-        <article class="qcard">
-          <h2 class="qtitle">Book or Rebook Help</h2>
-          <a href="tel:+18569007834" aria-label="Call for booking help">1(856)900-7834</a>
-        </article>
-        <article class="qcard">
-          <h2 class="qtitle">Cancellation & Refund Guidance</h2>
-          <a href="tel:+18569007834" aria-label="Call for cancellation help">1(856)900-7834</a>
-        </article>
-        <article class="qcard">
-          <h2 class="qtitle">Urgent Same-Day Changes</h2>
-          <a href="tel:+18569007834" aria-label="Call for urgent travel help">1(856)900-7834</a>
-        </article>
-      </section>
+  <!-- ── Sticky Navigation ─────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="nav-brand" href="/airline-help-usa/" aria-label="Airline Consumer Guide home">
+        ✈ <span>Airline Consumer Guide</span>
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#airlines">Airlines</a></li>
+        <li><a href="#problems">Common Issues</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#editorial-review">Editorial</a></li>
+        <li><a href="#privacy-policy">Privacy</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="nav-cta" href="#contact">Get Help</a>
+    </div>
+  </nav>
 
-      <div class="trust" aria-label="Trust signals">
-        <span class="badge">Non-spammy editorial tone</span>
-        <span class="badge">Policy-aware traveler guidance</span>
-        <span class="badge">Accessibility-first structure</span>
-        <span class="badge">Updated for 2026</span>
+  <!-- ── Hero ──────────────────────────────────────────── -->
+  <header class="hero" id="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div>
+          <div class="eyebrow">✈ Airline Consumer Guide &nbsp;·&nbsp; Updated July 2026</div>
+          <h1>Real Airline Help When You Need It Most</h1>
+          <p class="lead">Stuck with a cancelled flight, confusing refund policy, or a last-minute booking change? We cut through airline jargon and give you practical, step-by-step guidance — no hold music required.</p>
+
+          <div class="quick-grid" role="list" aria-label="Quick help options">
+            <div class="qcard" role="listitem">
+              <div class="qcard-label">Book or Rebook a Flight</div>
+              <a class="qcard-action" href="tel:+18569007834" aria-label="Call for booking help: 1 856 900 7834">1 (856) 900-7834</a>
+            </div>
+            <div class="qcard" role="listitem">
+              <div class="qcard-label">Cancellation &amp; Refund Help</div>
+              <a class="qcard-action" href="tel:+18569007834" aria-label="Call for cancellation help: 1 856 900 7834">1 (856) 900-7834</a>
+            </div>
+            <div class="qcard" role="listitem">
+              <div class="qcard-label">Urgent Same-Day Changes</div>
+              <a class="qcard-action" href="tel:+18569007834" aria-label="Call for urgent travel help: 1 856 900 7834">1 (856) 900-7834</a>
+            </div>
+          </div>
+
+          <div class="trust-row" aria-label="Trust signals">
+            <span class="badge">✓ Human-first tone</span>
+            <span class="badge">✓ Policy-aware guidance</span>
+            <span class="badge">✓ No jargon or filler</span>
+            <span class="badge">✓ Updated for 2026</span>
+          </div>
+        </div>
       </div>
     </div>
   </header>
 
-  <main class="container" id="main-content">
-    <nav class="toc" aria-label="Hub navigation">
-      <h2>Airline help pages</h2>
-      <ul>
-        <li><a href="/airline-help-usa/airline-help/american/">American Airlines Booking & Cancellation Help</a></li>
-        <li><a href="/airline-help-usa/airline-help/delta/">Delta Air Lines Booking & Cancellation Help</a></li>
-        <li><a href="/airline-help-usa/airline-help/united/">United Airlines Booking & Cancellation Help</a></li>
-        <li><a href="/airline-help-usa/airline-help/southwest/">Southwest Airlines Booking & Cancellation Help</a></li>
-        <li><a href="/airline-help-usa/airline-help/jetblue/">JetBlue Airways Booking & Cancellation Help</a></li>
-      </ul>
-    </nav>
+  <main id="main-content">
 
-    <section>
-      <h2>Choose Your Airline</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>American Airlines</h3>
-          <p>Booking help, cancellation policy guidance, same-day change paths, and practical refund/credit tips.</p>
-          <a class="btn" href="/airline-help-usa/airline-help/american/">Open American Guide →</a>
-        </article>
-
-        <article class="card">
-          <h3>Delta Air Lines</h3>
-          <p>Action-first help for Delta booking, cancellation decisions, eCredit usage, and near-departure rebooking.</p>
-          <a class="btn" href="/airline-help-usa/airline-help/delta/">Open Delta Guide →</a>
-        </article>
-
-        <article class="card">
-          <h3>United Airlines</h3>
-          <p>United flight change and cancellation support with fare-type logic, refund expectations, and credit strategy.</p>
-          <a class="btn" href="/airline-help-usa/airline-help/united/">Open United Guide →</a>
-        </article>
-
-        <article class="card">
-          <h3>Southwest Airlines</h3>
-          <p>Southwest booking and cancellation guide with same-day action steps and travel credit optimization advice.</p>
-          <a class="btn" href="/airline-help-usa/airline-help/southwest/">Open Southwest Guide →</a>
-        </article>
-
-        <article class="card">
-          <h3>JetBlue Airways</h3>
-          <p>JetBlue change/cancel support including fare interpretation, refund handling, and rebooking decision flow.</p>
-          <a class="btn" href="/airline-help-usa/airline-help/jetblue/">Open JetBlue Guide →</a>
-        </article>
+    <!-- ── Choose Your Airline ────────────────────────── -->
+    <section id="airlines">
+      <div class="wrap">
+        <h2>Choose Your Airline</h2>
+        <p class="section-lead">Each guide covers booking, changes, cancellations, refund timelines, and travel credit strategy for that specific carrier — because every airline plays by its own rules.</p>
+        <div class="cards-grid">
+          <article class="card">
+            <h3>American Airlines</h3>
+            <p>Booking help, same-day change paths, cancellation policy by fare type, and practical AAdvantage credit tips.</p>
+            <a class="btn" href="/airline-help-usa/airline-help/american/">Open American Guide →</a>
+          </article>
+          <article class="card">
+            <h3>Delta Air Lines</h3>
+            <p>Action-first help for Delta booking, cancellation decisions, SkyMiles eCredit usage, and near-departure rebooking.</p>
+            <a class="btn" href="/airline-help-usa/airline-help/delta/">Open Delta Guide →</a>
+          </article>
+          <article class="card">
+            <h3>United Airlines</h3>
+            <p>United flight change and cancellation support with fare-type logic, refund expectations, and TravelBank credit strategy.</p>
+            <a class="btn" href="/airline-help-usa/airline-help/united/">Open United Guide →</a>
+          </article>
+          <article class="card">
+            <h3>Southwest Airlines</h3>
+            <p>Southwest booking and cancellation guide — no change fees, but understanding Wanna Get Away vs. Anytime fares matters.</p>
+            <a class="btn" href="/airline-help-usa/airline-help/southwest/">Open Southwest Guide →</a>
+          </article>
+          <article class="card">
+            <h3>JetBlue Airways</h3>
+            <p>JetBlue change and cancel support including fare interpretation, Mosaic benefits, refund handling, and rebooking decisions.</p>
+            <a class="btn" href="/airline-help-usa/airline-help/jetblue/">Open JetBlue Guide →</a>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section>
-      <h2>Most Searched Airline Help Topics</h2>
-      <ul>
-        <li>How to change a flight without losing value</li>
-        <li>Airline cancellation policy by fare type</li>
-        <li>Refund timelines and what affects processing speed</li>
-        <li>How to use airline travel credits effectively</li>
-        <li>Same-day rebooking options during disruptions</li>
-      </ul>
-      <p class="note">Tip: outcomes depend on route, fare class, and timing. Compare change vs cancel before final action.</p>
+    <!-- ── Common Problems & Solutions ───────────────── -->
+    <section id="problems">
+      <div class="wrap">
+        <h2>Common Traveler Problems — and How to Solve Them</h2>
+        <p class="section-lead">These are the real-world situations we help with every day. If your situation is here, click through to the carrier guide for step-by-step resolution.</p>
+        <div class="problems-grid">
+          <div class="problem-card">
+            <span class="problem-tag">Booking &amp; Rebooking</span>
+            <h3>You booked the wrong date or city</h3>
+            <p>Most airlines offer a 24-hour risk-free cancellation window after booking. After that, your options depend on fare type and how close the departure is. We walk you through every path.</p>
+          </div>
+          <div class="problem-card">
+            <span class="problem-tag">Cancellation</span>
+            <h3>Your flight was cancelled by the airline</h3>
+            <p>If the airline cancels your flight you're entitled to a full cash refund in most cases — regardless of your fare type. Learn how to request it, what to say, and what to do if they push back.</p>
+          </div>
+          <div class="problem-card">
+            <span class="problem-tag">Refunds</span>
+            <h3>You cancelled but haven't received your refund</h3>
+            <p>Refund timelines vary from 7 to 20 business days. We explain what the delay usually means, when to follow up, and how to escalate if the refund stalls.</p>
+          </div>
+          <div class="problem-card">
+            <span class="problem-tag">Travel Credits</span>
+            <h3>You have a credit that's about to expire</h3>
+            <p>Airline travel credits often have hidden expiration traps. We break down carrier-specific rules and show you how to apply credits without losing value.</p>
+          </div>
+          <div class="problem-card">
+            <span class="problem-tag">Flight Changes</span>
+            <h3>You need to change your flight last-minute</h3>
+            <p>Same-day changes have specific rules — some free, some fee-based. We cover which routes and fare classes qualify and the fastest way to make the switch.</p>
+          </div>
+          <div class="problem-card">
+            <span class="problem-tag">Disruptions</span>
+            <h3>Your flight was delayed over 3 hours</h3>
+            <p>A significant delay may qualify you for rebooking at no cost, meal vouchers, or even hotel accommodation. We detail exactly what to ask for and when your rights kick in.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="footer">
-      <h2>Editorial Standard</h2>
-      <p>We publish practical, policy-aware, traveler-first guidance designed for real-time decisions under pressure.</p>
-      <p class="note">Publisher: Airline Consumer Guide • Last updated: July 26, 2026</p>
-
-      <nav aria-label="Trust and policy pages">
-        <ul class="legal-nav">
-          <li><a href="/airline-help-usa/about-us/">About Us</a></li>
-          <li><a href="/airline-help-usa/privacy-policy/">Privacy Policy</a></li>
-          <li><a href="/airline-help-usa/editorial-review/">Editorial Review</a></li>
-          <li><a href="/airline-help-usa/contact/">Contact</a></li>
+    <!-- ── Most Searched Topics ───────────────────────── -->
+    <section id="topics">
+      <div class="wrap">
+        <h2>Most Searched Airline Help Topics</h2>
+        <p class="section-lead">These are the highest-intent questions travelers bring to us. Find your topic and navigate to the relevant carrier guide for in-depth answers.</p>
+        <ul class="topics-cols">
+          <li>How to change a flight without losing value</li>
+          <li>Airline cancellation policy by fare type (Basic, Main, Flex)</li>
+          <li>Refund timelines and what affects processing speed</li>
+          <li>How to use airline travel credits before they expire</li>
+          <li>Same-day rebooking options during disruptions</li>
+          <li>What "non-refundable" really means for your ticket</li>
+          <li>How to rebook after an airline-initiated cancellation</li>
+          <li>Trip interruption: what to do when a connection is missed</li>
+          <li>How to get a full cash refund vs. airline credit</li>
+          <li>Upgrade, standby, and waitlist procedures by carrier</li>
+          <li>Baggage claim and damaged bag resolution steps</li>
+          <li>How to file a DOT complaint if an airline won't help</li>
         </ul>
-      </nav>
+        <p class="note" style="margin-top:16px">Tip: outcomes depend on route, fare class, booking channel, and timing. Always compare change vs. cancel before taking irreversible action.</p>
+      </div>
     </section>
+
+    <!-- ── FAQ ────────────────────────────────────────── -->
+    <section id="faq">
+      <div class="wrap">
+        <h2>Frequently Asked Questions</h2>
+        <p class="section-lead">Quick answers to the questions travelers ask us most.</p>
+        <div class="faq-list">
+          <details>
+            <summary>Can I get a refund on a non-refundable ticket?</summary>
+            <div class="faq-body">
+              <p>Yes — in specific circumstances. If the <em>airline</em> cancels or significantly changes your flight (3+ hour delay in departure time, origin/destination change, downgrade in cabin class), you are entitled to a full cash refund under U.S. DOT rules, regardless of fare type. If you initiated the cancellation, a Basic Economy ticket typically forfeits all value, while Main Cabin and higher fares often convert to travel credit. Check your carrier guide for exact policies.</p>
+            </div>
+          </details>
+          <details>
+            <summary>How long does an airline refund take?</summary>
+            <div class="faq-body">
+              <p>Most airlines issue refunds within 7 business days for credit cards and 20 business days for cash/check. If you haven't seen yours after that window, it's appropriate to call the airline directly. If you're past 30 days with no resolution, you can dispute the charge with your credit card issuer or file a complaint with the DOT.</p>
+            </div>
+          </details>
+          <details>
+            <summary>What is the 24-hour cancellation rule?</summary>
+            <div class="faq-body">
+              <p>Under U.S. DOT rules, airlines must allow passengers to cancel or hold reservations at the quoted price for 24 hours — provided the booking was made at least 7 days before departure. This applies to tickets purchased directly from the airline. Third-party bookings (OTAs) may have different policies.</p>
+            </div>
+          </details>
+          <details>
+            <summary>What happens to travel credits if I don't use them?</summary>
+            <div class="faq-body">
+              <p>It depends on the airline. Most credits issued as "flight credit" or "eCredit" expire within 12 months of the original booking or cancellation date — though many airlines extended validity during the pandemic. Always check the expiration date on your credit and apply it to a future booking before it lapses. Our carrier guides detail how to find and redeem your credit for each major airline.</p>
+            </div>
+          </details>
+          <details>
+            <summary>What counts as a "significant schedule change" that qualifies for a refund?</summary>
+            <div class="faq-body">
+              <p>The DOT defines a significant change as a departure or arrival time that differs by 3 hours or more (domestic) or 6 hours or more (international), a change to a different origin or destination airport, an increase in the number of connections, a downgrade in cabin class, or connections at different airports. If any of these apply, you can request a full refund, not just a credit.</p>
+            </div>
+          </details>
+          <details>
+            <summary>Should I change or cancel my flight?</summary>
+            <div class="faq-body">
+              <p>Changing is usually better if you still want to travel on a different date — especially for non-refundable tickets where a change preserves credit value. Cancelling makes sense if you want a refund and qualify for one (e.g., airline-initiated cancellation), or if you're unlikely to use the credit before expiration. Compare the change fee plus fare difference vs. the value of any credit before deciding.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── About Us ────────────────────────────────────── -->
+    <section id="about">
+      <div class="wrap">
+        <h2>About Us</h2>
+        <div class="prose">
+          <p>Airline Consumer Guide is an independent travel information resource dedicated to helping everyday travelers navigate the often confusing world of airline policies. We are not affiliated with any airline, and we receive no compensation from carriers for our guidance.</p>
+          <p>We started this site after repeatedly watching friends and family lose money — not because the policies were unfair, but because the rules were buried in fine print nobody had time to read. Our mission is to surface that information in plain English, at the moment people need it most.</p>
+          <h3>What We Do</h3>
+          <ul>
+            <li>Research and translate airline policies into clear, actionable guidance.</li>
+            <li>Cover the five largest U.S. carriers: American, Delta, United, Southwest, and JetBlue.</li>
+            <li>Update content whenever airlines change their policies — especially around fare rules, refund procedures, and credit terms.</li>
+            <li>Provide impartial comparisons to help travelers make informed decisions.</li>
+          </ul>
+          <h3>Who We Are</h3>
+          <p>Our editorial team includes travel writers, former airline customer service professionals, and policy researchers who have collectively navigated thousands of booking changes, refund disputes, and travel disruptions. We write from experience — not from a press release.</p>
+          <div class="info-box">
+            <p><strong>Disclaimer:</strong> Airline Consumer Guide is an independent information resource. We are not affiliated with, endorsed by, or acting on behalf of any airline. Our guidance is informational — always verify final details with your airline before taking action.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Editorial Review ───────────────────────────── -->
+    <section id="editorial-review">
+      <div class="wrap">
+        <h2>Editorial Review Standards</h2>
+        <div class="prose">
+          <p>We hold ourselves to a strict editorial process because traveler decisions made on bad information have real financial consequences. Here is exactly how our content is researched, written, and maintained.</p>
+          <h3>Research &amp; Sourcing</h3>
+          <ul>
+            <li>Every policy claim is sourced directly from the airline's official terms and conditions, help center, or DOT filings.</li>
+            <li>We cite the source page and date of access for every policy we describe.</li>
+            <li>We do not rely on community forums, social media, or unverified third-party sources for policy facts.</li>
+          </ul>
+          <h3>Writing &amp; Review Process</h3>
+          <ul>
+            <li>Articles are drafted by a travel content specialist and reviewed by a second editor before publication.</li>
+            <li>Complex policy interpretations (e.g., DOT refund rules) are reviewed against official DOT guidance.</li>
+            <li>We avoid hedging language that dilutes actionable guidance. If the answer is "it depends," we explain exactly what it depends on.</li>
+          </ul>
+          <h3>Update Policy</h3>
+          <ul>
+            <li>Pages are reviewed after any confirmed airline policy change.</li>
+            <li>All pages carry a "last updated" date so readers can judge recency.</li>
+            <li>Outdated content is flagged, updated, or removed — not left to decay silently.</li>
+          </ul>
+          <h3>Corrections</h3>
+          <p>If you find an error, please <a href="#contact">contact us</a>. We take corrections seriously and will update the content promptly, noting the correction at the bottom of the affected page.</p>
+          <div class="info-box">
+            <p><strong>Independence:</strong> No airline, travel agency, or advertiser influences our editorial decisions. We do not accept sponsored content posing as organic guidance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Privacy Policy ─────────────────────────────── -->
+    <section id="privacy-policy">
+      <div class="wrap">
+        <h2>Privacy Policy</h2>
+        <div class="prose">
+          <p class="note" style="margin-bottom:18px">Last updated: July 26, 2026</p>
+          <p>Your privacy matters to us. This policy explains what information we collect, how we use it, and your choices.</p>
+          <h3>Information We Collect</h3>
+          <p>Airline Consumer Guide is a static, informational website. We do not run user accounts, collect form submissions, or store personal data on our servers. The only data processed is standard server/CDN access logs (IP address, browser user agent, page requested, timestamp) which are used solely for security monitoring and aggregate traffic analysis.</p>
+          <h3>Analytics</h3>
+          <p>We may use privacy-respecting analytics to understand which pages are most helpful to travelers. If analytics are used, they are configured to anonymize IP addresses and not share data with advertising networks.</p>
+          <h3>Cookies</h3>
+          <p>We do not set first-party cookies for tracking or advertising. If third-party embeds (e.g., video players, fonts) set cookies, that is governed by their own privacy policies.</p>
+          <h3>Third-Party Links</h3>
+          <p>Our guides link to airline websites, government resources (DOT, CFPB), and occasionally travel tools. We are not responsible for the privacy practices of those third-party sites. Please review their privacy policies before providing any personal information.</p>
+          <h3>Contact &amp; Corrections Requests</h3>
+          <p>If you contact us via email with a correction or inquiry, we use your email only to respond. We do not add you to any mailing list or share your contact details with third parties.</p>
+          <h3>Children's Privacy</h3>
+          <p>This site is not directed at children under 13. We do not knowingly collect any information from children.</p>
+          <h3>Changes to This Policy</h3>
+          <p>If we materially change this policy, we will update the date above. Continued use of the site after a policy update constitutes acceptance of the revised terms.</p>
+          <h3>Contact</h3>
+          <p>Privacy-related questions can be directed to us via the <a href="#contact">contact section</a> below.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact / CTA ──────────────────────────────── -->
+    <section id="contact">
+      <div class="wrap">
+        <h2>Contact &amp; Get Help</h2>
+        <p class="section-lead">Have a question that isn't covered in our guides? Reach out — we respond to every message within one business day.</p>
+        <div class="cta-band">
+          <div>
+            <h2 style="color:#fff;margin-bottom:8px">Need Immediate Airline Assistance?</h2>
+            <p>For urgent booking changes, same-day cancellations, or refund escalations — our travel helpline connects you with experienced advisors who know how to navigate airline systems.</p>
+          </div>
+          <a class="cta-btn-white" href="tel:+18569007834" aria-label="Call Airline Consumer Guide helpline: 1 856 900 7834">
+            📞 Call 1 (856) 900-7834
+          </a>
+        </div>
+        <div class="info-box" style="margin-top:28px">
+          <p><strong>Editorial inquiries &amp; corrections:</strong> If you have found an error in our content, spotted an outdated policy, or want to suggest a topic, please email us. We appreciate every reader tip — it helps us keep information accurate for all travelers.</p>
+        </div>
+        <div class="disclaimer">
+          <strong>Disclaimer:</strong> Airline Consumer Guide is an independent information resource and is not affiliated with any airline. The phone number above connects to an independent travel advisory service, not to any airline's official customer service line. For official airline support, visit the airline's website directly.
+        </div>
+      </div>
+    </section>
+
   </main>
 
+  <!-- ── Footer ─────────────────────────────────────── -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">✈ Airline Consumer Guide</div>
+          <p class="footer-about">Independent, policy-aware airline help for U.S. travelers. Real guidance. No jargon. Updated for 2026.</p>
+        </div>
+        <div>
+          <h4 class="footer-col">Airline Guides</h4>
+          <ul class="footer-links">
+            <li><a href="/airline-help-usa/airline-help/american/">American Airlines</a></li>
+            <li><a href="/airline-help-usa/airline-help/delta/">Delta Air Lines</a></li>
+            <li><a href="/airline-help-usa/airline-help/united/">United Airlines</a></li>
+            <li><a href="/airline-help-usa/airline-help/southwest/">Southwest Airlines</a></li>
+            <li><a href="/airline-help-usa/airline-help/jetblue/">JetBlue Airways</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col">Information</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#editorial-review">Editorial Review</a></li>
+            <li><a href="#privacy-policy">Privacy Policy</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Airline Consumer Guide. All rights reserved.</p>
+        <p class="note">Last updated: July 26, 2026 &nbsp;·&nbsp; Not affiliated with any airline.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── Structured Data ─────────────────────────────── -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"WebSite",
     "name":"Airline Consumer Guide",
-    "url":"https://progressiveguide.github.io/airline-help-usa/"
+    "url":"https://progressiveguide.github.io/airline-help-usa/",
+    "description":"Independent, policy-aware airline help for U.S. travelers covering booking, cancellations, refunds, and travel credits.",
+    "publisher":{"@type":"Organization","name":"Airline Consumer Guide","url":"https://progressiveguide.github.io/airline-help-usa/"}
   }
   </script>
 
@@ -253,7 +646,37 @@
     "@context":"https://schema.org",
     "@type":"Organization",
     "name":"Airline Consumer Guide",
-    "url":"https://progressiveguide.github.io/airline-help-usa/"
+    "url":"https://progressiveguide.github.io/airline-help-usa/",
+    "description":"Independent travel information resource helping U.S. travelers navigate airline policies."
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Can I get a refund on a non-refundable ticket?",
+        "acceptedAnswer":{"@type":"Answer","text":"Yes — if the airline cancels or significantly changes your flight (3+ hour departure delay, route change, cabin downgrade), you are entitled to a full cash refund under U.S. DOT rules regardless of fare type. If you initiated the cancellation, Basic Economy typically forfeits all value while higher fares often convert to travel credit."}
+      },
+      {
+        "@type":"Question",
+        "name":"How long does an airline refund take?",
+        "acceptedAnswer":{"@type":"Answer","text":"Most airlines issue refunds within 7 business days for credit cards and 20 business days for cash. If you haven't received it after 30 days, you can dispute with your card issuer or file a DOT complaint."}
+      },
+      {
+        "@type":"Question",
+        "name":"What is the 24-hour cancellation rule?",
+        "acceptedAnswer":{"@type":"Answer","text":"U.S. DOT rules require airlines to allow passengers to cancel or hold reservations at the quoted price for 24 hours if the booking was made at least 7 days before departure. This applies to tickets purchased directly from the airline."}
+      },
+      {
+        "@type":"Question",
+        "name":"Should I change or cancel my flight?",
+        "acceptedAnswer":{"@type":"Answer","text":"Changing is usually better if you still want to travel on a different date — especially for non-refundable tickets where a change preserves credit value. Cancelling makes more sense if you qualify for a full refund or are unlikely to use the credit before expiration."}
+      }
+    ]
   }
   </script>
 
